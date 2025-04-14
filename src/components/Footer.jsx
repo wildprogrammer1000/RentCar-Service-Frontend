@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white">
+    <footer className="bg-gray-800 text-secondary-DEFAULT">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -16,17 +16,17 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">바로가기</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/vehicles" className="text-gray-400 hover:text-white">
+                <Link to="/vehicles" className="text-gray-400 hover:text-secondary-DEFAULT">
                   차량검색
                 </Link>
               </li>
               <li>
-                <Link to="/reviews" className="text-gray-400 hover:text-white">
+                <Link to="/reviews" className="text-gray-400 hover:text-secondary-DEFAULT">
                   계약후기
                 </Link>
               </li>
               <li>
-                <Link to="/promotions" className="text-gray-400 hover:text-white">
+                <Link to="/promotions" className="text-gray-400 hover:text-secondary-DEFAULT">
                   프로모션
                 </Link>
               </li>

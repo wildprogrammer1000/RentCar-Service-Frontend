@@ -31,7 +31,7 @@ const SearchPopup = ({ isOpen, onClose }) => {
           </div>
           <Link
             to={`/vehicles?search=${searchTerm}`}
-            className="bg-primary-DEFAULT text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors text-sm whitespace-nowrap"
+            className="bg-primary-DEFAULT text-secondary-DEFAULT px-4 py-2 rounded-md hover:bg-primary-dark transition-colors text-sm whitespace-nowrap"
           >
             검색
           </Link>

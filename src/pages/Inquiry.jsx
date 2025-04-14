@@ -19,7 +19,7 @@ const Inquiry = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // 폼 제출 로직
-    console.log(formData);
+    //console.log(formData);
   };
 
   const handleChange = (e) => {
@@ -209,7 +209,7 @@ const Inquiry = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary-DEFAULT text-white py-3 rounded-md hover:bg-primary-dark transition-colors shadow-lg shadow-primary-DEFAULT/30 font-bold"
+                className="w-full bg-primary-DEFAULT text-secondary-DEFAULT py-3 rounded-md hover:bg-primary-dark transition-colors shadow-lg shadow-primary-DEFAULT/30 font-bold"
               >
                 신청하기
               </button>

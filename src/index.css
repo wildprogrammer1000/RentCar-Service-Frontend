@@ -14,6 +14,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 모든 이미지 태그에 draggable="false" 적용 */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

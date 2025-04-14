@@ -16,6 +16,24 @@ const Navbar = () => {
               </span>
             </Link>
             <Link
+              to="/quick-estimate"
+              className="text-secondary-DEFAULT hover:text-primary-DEFAULT transition-colors text-sm sm:text-base"
+            >
+              간편 견적
+            </Link>
+            <Link
+              to="/same-day"
+              className="text-secondary-DEFAULT hover:text-primary-DEFAULT transition-colors text-sm sm:text-base"
+            >
+              당일출고
+            </Link>
+            <Link
+              to="/today-recommendations"
+              className="px-4 py-2 rounded-full bg-background-card text-secondary-DEFAULT hover:bg-background-DEFAULT transition-colors"
+            >
+              오늘의 추천 차량
+            </Link>
+            <Link
               to="/reviews"
               className="text-secondary-DEFAULT hover:text-primary-DEFAULT transition-colors text-sm sm:text-base"
             >
@@ -26,18 +44,6 @@ const Navbar = () => {
               className="text-secondary-DEFAULT hover:text-primary-DEFAULT transition-colors text-sm sm:text-base"
             >
               프로모션/이벤트
-            </Link>
-            <Link
-              to="/today-recommendations"
-              className="px-4 py-2 rounded-full bg-background-card text-secondary-DEFAULT hover:bg-background-DEFAULT transition-colors"
-            >
-              오늘의 추천차량
-            </Link>
-            <Link
-              to="/inquiry"
-              className="bg-primary-DEFAULT text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors text-sm sm:text-base"
-            >
-              문의하기
             </Link>
           </div>
 

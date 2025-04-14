@@ -55,7 +55,7 @@ const Reviews = () => {
           <button className="px-2 sm:px-3 py-1 border rounded-md text-secondary-DEFAULT hover:bg-background-DEFAULT transition-colors text-sm sm:text-base">
             이전
           </button>
-          <button className="px-2 sm:px-3 py-1 bg-primary-DEFAULT text-white rounded-md text-sm sm:text-base">
+          <button className="px-2 sm:px-3 py-1 bg-primary-DEFAULT text-secondary-DEFAULT rounded-md text-sm sm:text-base">
             1
           </button>
           <button className="px-2 sm:px-3 py-1 border rounded-md text-secondary-DEFAULT hover:bg-background-DEFAULT transition-colors text-sm sm:text-base">

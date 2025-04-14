@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { brands } from "../data/vehicles";
 
 const TodayRecommendations = () => {
   const [selectedType, setSelectedType] = useState("domestic");
 
-  // 오늘의 추천차량 데이터 (실제로는 API에서 가져올 수 있음)
+  // 오늘의 추천 차량 데이터 (실제로는 API에서 가져올 수 있음)
   const recommendations = {
     domestic: [
       {
@@ -52,7 +51,7 @@ const TodayRecommendations = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8 text-secondary-DEFAULT">
-        오늘의 추천차량
+        오늘의 추천 차량
       </h1>
 
       {/* 차종 선택 */}
@@ -62,7 +61,7 @@ const TodayRecommendations = () => {
             onClick={() => setSelectedType("domestic")}
             className={`px-6 py-3 rounded-md transition-all ${
               selectedType === "domestic"
-                ? "bg-primary-DEFAULT text-white"
+                ? "bg-primary-DEFAULT"
                 : "bg-background-card text-secondary-DEFAULT hover:bg-background-DEFAULT"
             }`}
           >
@@ -72,7 +71,7 @@ const TodayRecommendations = () => {
             onClick={() => setSelectedType("imported")}
             className={`px-6 py-3 rounded-md transition-all ${
               selectedType === "imported"
-                ? "bg-primary-DEFAULT text-white"
+                ? "bg-primary-DEFAULT"
                 : "bg-background-card text-secondary-DEFAULT hover:bg-background-DEFAULT"
             }`}
           >
@@ -94,7 +93,7 @@ const TodayRecommendations = () => {
                 alt={car.name}
                 className="w-full h-48 object-cover rounded-md"
               />
-              <div className="absolute top-2 right-2 bg-primary-DEFAULT text-white px-3 py-1 rounded-full text-sm">
+              <div className="absolute top-2 right-2 bg-primary-DEFAULT text-secondary-DEFAULT px-3 py-1 rounded-full text-sm">
                 {car.discount}
               </div>
             </div>
@@ -116,7 +115,7 @@ const TodayRecommendations = () => {
             </div>
             <Link
               to={`/vehicles/${car.id}`}
-              className="block w-full text-center bg-primary-DEFAULT text-white py-2 rounded-md hover:bg-primary-dark transition-colors"
+              className="block w-full text-center bg-primary-DEFAULT text-secondary-DEFAULT py-2 rounded-md hover:bg-primary-dark transition-colors"
             >
               상세보기
             </Link>

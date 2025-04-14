@@ -1,7 +1,4 @@
-export const vehicleTypes = [
-  { id: "domestic", name: "국산차" },
-  { id: "imported", name: "수입차" },
-];
+export const vehicleTypes = ['domestic', 'imported'];
 
 export const brands = {
   domestic: [

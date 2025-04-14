@@ -14,7 +14,7 @@ const Promotions = () => {
           </div>
           <div className="p-6">
             <div className="flex items-center mb-2">
-              <span className="bg-red-500 text-white text-sm px-2 py-1 rounded">
+              <span className="bg-red-500 text-secondary-DEFAULT text-sm px-2 py-1 rounded">
                 진행중
               </span>
               <span className="text-gray-500 text-sm ml-2">
@@ -32,7 +32,7 @@ const Promotions = () => {
 
             <Link
               to="/inquiry"
-              className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+              className="inline-block bg-blue-600 text-secondary-DEFAULT px-4 py-2 rounded-md hover:bg-blue-700"
             >
               자세히 보기
             </Link>
@@ -46,7 +46,7 @@ const Promotions = () => {
           </div>
           <div className="p-6">
             <div className="flex items-center mb-2">
-              <span className="bg-green-500 text-white text-sm px-2 py-1 rounded">
+              <span className="bg-green-500 text-secondary-DEFAULT text-sm px-2 py-1 rounded">
                 예정
               </span>
               <span className="text-gray-500 text-sm ml-2">
@@ -62,7 +62,7 @@ const Promotions = () => {
 
             <Link
               to="/inquiry"
-              className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+              className="inline-block bg-blue-600 text-secondary-DEFAULT px-4 py-2 rounded-md hover:bg-blue-700"
             >
               자세히 보기
             </Link>
@@ -81,7 +81,7 @@ const Promotions = () => {
             </div>
             <div className="p-6">
               <div className="flex items-center mb-2">
-                <span className="bg-gray-500 text-white text-sm px-2 py-1 rounded">
+                <span className="bg-gray-500 text-secondary-DEFAULT text-sm px-2 py-1 rounded">
                   종료
                 </span>
                 <span className="text-gray-500 text-sm ml-2">

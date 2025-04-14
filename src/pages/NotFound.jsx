@@ -7,7 +7,7 @@ const NotFound = () => {
       <p className="text-xl text-gray-600 mb-8">페이지를 찾을 수 없습니다.</p>
       <Link
         to="/"
-        className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+        className="bg-blue-600 text-secondary-DEFAULT px-6 py-2 rounded-lg hover:bg-blue-700"
       >
         홈으로 돌아가기
       </Link>
