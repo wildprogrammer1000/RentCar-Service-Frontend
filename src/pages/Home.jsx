@@ -127,14 +127,11 @@ const Home = () => {
 
       {/* 메뉴바 */}
       <div className="bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 mb-8">
           {/* 모바일/태블릿 메뉴 */}
           <div className="lg:hidden">
             <div className="grid grid-cols-4 gap-2 py-4">
-              <Link
-                to="/quick-estimate"
-                className="flex flex-col items-center gap-1"
-              >
+              <Link to="/inquiry" className="flex flex-col items-center gap-1">
                 <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-xl">
                   📞
                 </div>
@@ -178,7 +175,7 @@ const Home = () => {
             <div className="bg-white rounded-lg shadow-lg py-6 px-8 -mt-4">
               <div className="flex items-center justify-center gap-12">
                 <Link
-                  to="/quick-estimate"
+                  to="/inquiry"
                   className="flex items-center gap-3 text-secondary-DEFAULT hover:text-primary-DEFAULT transition-colors group"
                 >
                   <span className="text-2xl group-hover:scale-110 transition-transform">
@@ -230,58 +227,95 @@ const Home = () => {
       </section> */}
 
       {/* 문의 폼 */}
-      <section className="py-section bg-background-card">
+      <section className="py-section bg-background-card min-h-screen flex items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6 text-center text-secondary-DEFAULT">
-              상담 신청하기
-            </h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-secondary-DEFAULT mb-1">
-                  성함
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full p-2 border rounded-md text-secondary-DEFAULT bg-background-DEFAULT"
-                  required
-                />
+          <div className="max-w-2xl mx-auto lg:max-w-7xl">
+            {/* 모바일/태블릿 타이틀 */}
+            <div className="lg:hidden">
+              <h2 className="text-2xl font-bold mb-2 text-secondary-DEFAULT">
+                간편 견적 문의
+              </h2>
+              <p className="mb-6 text-secondary-DEFAULT">
+                간편하게 상담 신청을 해보세요!
+              </p>
+            </div>
+
+            <div className="lg:flex lg:items-start lg:gap-12">
+              {/* PC 타이틀 */}
+              <div className="hidden lg:block lg:flex-1">
+                <h2 className="text-3xl font-bold mb-4 text-secondary-DEFAULT">
+                  간편 견적 문의
+                </h2>
+                <p className="text-lg text-secondary-DEFAULT">
+                  간편하게 상담 신청을 해보세요!
+                </p>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-secondary-DEFAULT mb-1">
-                  연락처
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full p-2 border rounded-md text-secondary-DEFAULT bg-background-DEFAULT"
-                  required
-                />
+
+              {/* 폼 */}
+              <div className="lg:flex-1">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-secondary-DEFAULT mb-1">
+                      성함
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="성함을 입력해주세요"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full p-2 border rounded-md text-secondary-DEFAULT bg-background-DEFAULT"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-secondary-DEFAULT mb-1">
+                      연락처
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="010-1234-5678"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full p-2 border rounded-md text-secondary-DEFAULT bg-background-DEFAULT"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-secondary-DEFAULT mb-1">
+                      상담내용
+                    </label>
+                    <textarea
+                      placeholder="원하는 차종, 법인차량 문의 등"
+                      name="content"
+                      value={formData.content}
+                      onChange={handleChange}
+                      rows="4"
+                      className="w-full p-2 border rounded-md text-secondary-DEFAULT bg-background-DEFAULT"
+                    />
+                  </div>
+                  <div className="md:max-w-xs mx-auto lg:hidden">
+                    <button
+                      type="submit"
+                      className="w-full bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 hover:-translate-y-1 font-semibold text-lg"
+                    >
+                      문의하기
+                    </button>
+                  </div>
+                </form>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-secondary-DEFAULT mb-1">
-                  상담내용
-                </label>
-                <textarea
-                  name="content"
-                  value={formData.content}
-                  onChange={handleChange}
-                  rows="4"
-                  className="w-full p-2 border rounded-md text-secondary-DEFAULT bg-background-DEFAULT"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 hover:-translate-y-1 font-semibold text-lg"
-              >
-                문의하기
-              </button>
-            </form>
+            </div>
+          </div>
+          {/* PC 버튼 */}
+          <div className="hidden lg:flex lg:justify-center lg:mt-8">
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="bg-blue-600 text-white px-20 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 hover:-translate-y-1 font-semibold text-lg"
+            >
+              문의하기
+            </button>
           </div>
         </div>
       </section>
