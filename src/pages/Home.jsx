@@ -125,34 +125,98 @@ const Home = () => {
             />
           ))}
         </div>
+      </div>
 
-        {/* Floating Navbar - 메인 슬라이더 내부로 이동 */}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-white rounded-t-2xl shadow-lg">
-          <div className="flex items-center gap-2 p-4">
-            <button
-              onClick={() => scrollTo(0, 0)}
-              className="px-4 py-2 rounded-full bg-primary-DEFAULT text-secondary-DEFAULT hover:bg-primary-dark transition-colors"
-            >
-              견적상담
-            </button>
-            <Link
-              to="/quick-estimate"
-              className="px-4 py-2 rounded-full bg-background-card text-secondary-DEFAULT hover:bg-background-DEFAULT transition-colors"
-            >
-              온라인 견적
-            </Link>
-            <Link
-              to="/today-recommendations"
-              className="px-4 py-2 rounded-full bg-background-card text-secondary-DEFAULT hover:bg-background-DEFAULT transition-colors"
-            >
-              오늘의 추천 차량
-            </Link>
-            <Link
-              to="/reviews"
-              className="px-4 py-2 rounded-full bg-background-card text-secondary-DEFAULT hover:bg-background-DEFAULT transition-colors"
-            >
-              계약 후기
-            </Link>
+      {/* 메뉴바 */}
+      <div className="bg-white">
+        <div className="container mx-auto px-4">
+          {/* 모바일/태블릿 메뉴 */}
+          <div className="lg:hidden">
+            <div className="grid grid-cols-4 gap-2 py-4">
+              <Link
+                to="/quick-estimate"
+                className="flex flex-col items-center gap-1"
+              >
+                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-xl">
+                  📞
+                </div>
+                <span className="text-xs text-secondary-DEFAULT">견적상담</span>
+              </Link>
+              <Link
+                to="/quick-estimate"
+                className="flex flex-col items-center gap-1"
+              >
+                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-xl">
+                  💻
+                </div>
+                <span className="text-xs text-secondary-DEFAULT">
+                  온라인 견적
+                </span>
+              </Link>
+              <Link
+                to="/today-recommendations"
+                className="flex flex-col items-center gap-1"
+              >
+                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-xl">
+                  🚗
+                </div>
+                <span className="text-xs text-secondary-DEFAULT">
+                  추천 차량
+                </span>
+              </Link>
+              <Link to="/reviews" className="flex flex-col items-center gap-1">
+                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-xl">
+                  ✍️
+                </div>
+                <span className="text-xs text-secondary-DEFAULT">
+                  계약 후기
+                </span>
+              </Link>
+            </div>
+          </div>
+
+          {/* PC 메뉴 */}
+          <div className="hidden lg:block position relative">
+            <div className="bg-white rounded-lg shadow-lg py-6 px-8 -mt-4">
+              <div className="flex items-center justify-center gap-12">
+                <Link
+                  to="/quick-estimate"
+                  className="flex items-center gap-3 text-secondary-DEFAULT hover:text-primary-DEFAULT transition-colors group"
+                >
+                  <span className="text-2xl group-hover:scale-110 transition-transform">
+                    📞
+                  </span>
+                  <span className="text-lg font-medium">견적상담</span>
+                </Link>
+                <Link
+                  to="/quick-estimate"
+                  className="flex items-center gap-3 text-secondary-DEFAULT hover:text-primary-DEFAULT transition-colors group"
+                >
+                  <span className="text-2xl group-hover:scale-110 transition-transform">
+                    💻
+                  </span>
+                  <span className="text-lg font-medium">온라인 견적</span>
+                </Link>
+                <Link
+                  to="/today-recommendations"
+                  className="flex items-center gap-3 text-secondary-DEFAULT hover:text-primary-DEFAULT transition-colors group"
+                >
+                  <span className="text-2xl group-hover:scale-110 transition-transform">
+                    🚗
+                  </span>
+                  <span className="text-lg font-medium">오늘의 추천 차량</span>
+                </Link>
+                <Link
+                  to="/reviews"
+                  className="flex items-center gap-3 text-secondary-DEFAULT hover:text-primary-DEFAULT transition-colors group"
+                >
+                  <span className="text-2xl group-hover:scale-110 transition-transform">
+                    ✍️
+                  </span>
+                  <span className="text-lg font-medium">계약 후기</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
