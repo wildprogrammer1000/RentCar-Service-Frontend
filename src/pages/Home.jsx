@@ -75,55 +75,53 @@ const Home = () => {
   return (
     <div className="w-full">
       {/* 메인 슬라이드 */}
-      <div className="relative h-[600px] overflow-hidden">
-        <div
-          ref={slideRef}
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {slides.map((slide, index) => (
+      <div className="relative w-full flex items-center justify-center mb-8">
+        <div className="flex items-center justify-center w-full max-w-[1920px]">
+          <div className="aspect-square md:aspect-[4/3] lg:aspect-video overflow-hidden max-h-[80vh]">
             <div
-              key={`slide-${index}`}
-              className="w-full flex-shrink-0 relative h-[600px]"
+              ref={slideRef}
+              className="flex transition-transform duration-500 ease-in-out h-full"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              <img
-                src={slide.image}
-                alt={slide.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/50 flex items-center">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className="max-w-2xl">
-                    <h1 className="text-4xl sm:text-5xl font-bold text-secondary-DEFAULT mb-4">
-                      {slide.title}
-                    </h1>
-                    <p className="text-xl text-secondary-DEFAULT mb-8">
-                      {slide.description}
-                    </p>
-                    <Link
-                      to="/inquiry"
-                      className="inline-block bg-primary-DEFAULT text-secondary-DEFAULT px-6 py-3 rounded-md hover:bg-primary-dark transition-colors"
-                    >
-                      상담 신청하기
-                    </Link>
+              {slides.map((slide, index) => (
+                <div
+                  key={`slide-${index}`}
+                  className="flex flex-col justify-center gap-4 w-full flex-shrink-0 relative h-full"
+                >
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="object-contain"
+                  />
+                  <div className="flex items-center">
+                    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                      <div className="max-w-2xl">
+                        <h1 className="text-4xl sm:text-5xl font-bold text-secondary-DEFAULT mb-4">
+                          {slide.title}
+                        </h1>
+                        <p className="text-xl text-secondary-DEFAULT mb-8">
+                          {slide.description}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-          {slides.map((_, index) => (
-            <button
-              key={`dot-${index}`}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                currentSlide === index
-                  ? "bg-primary-DEFAULT"
-                  : "bg-white/50 hover:bg-white/75"
-              }`}
-            />
-          ))}
+          </div>
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+            {slides.map((_, index) => (
+              <button
+                key={`dot-${index}`}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  currentSlide === index
+                    ? "bg-primary-DEFAULT"
+                    : "bg-white/50 hover:bg-white/75"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
@@ -176,7 +174,7 @@ const Home = () => {
           </div>
 
           {/* PC 메뉴 */}
-          <div className="hidden lg:block position relative">
+          <div className="hidden lg:block relative">
             <div className="bg-white rounded-lg shadow-lg py-6 px-8 -mt-4">
               <div className="flex items-center justify-center gap-12">
                 <Link
@@ -222,14 +220,14 @@ const Home = () => {
       </div>
 
       {/* 차량 선택 섹션 */}
-      <section className="py-section">
+      {/* <section className="py-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold mb-8 text-center text-secondary-DEFAULT">
             차량 선택
           </h2>
           <VehicleSelector onVehicleSelect={handleVehicleSelect} />
         </div>
-      </section>
+      </section> */}
 
       {/* 문의 폼 */}
       <section className="py-section bg-background-card">
@@ -279,7 +277,7 @@ const Home = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary-DEFAULT text-secondary-DEFAULT py-3 rounded-md hover:bg-primary-dark transition-colors shadow-lg shadow-primary-DEFAULT/30 font-bold"
+                className="w-full bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 hover:-translate-y-1 font-semibold text-lg"
               >
                 문의하기
               </button>
